@@ -1,7 +1,7 @@
 # X-Developer Analysis Action
 
-- [English](https://github.com/FieldTech/x-developer-analysis-actions/blob/master/README.md)
-- [中文](https://github.com/FieldTech/x-developer-analysis-actions/blob/master/README-zh-cn.md)
+- [English](https://github.com/FieldTech/x-developer-analysis-action/blob/master/README.md)
+- [中文](https://github.com/FieldTech/x-developer-analysis-action/blob/master/README-zh-cn.md)
 
 This GitHub Action connects GitHub and [X-Developer](https://x-developer.cn) service - Git Analytics Platform for Engineering Productivity.
 
