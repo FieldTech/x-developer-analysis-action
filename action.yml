@@ -1,0 +1,25 @@
+name: "X-Developer Analysis Action"
+description: "Connects GitHub and X-Developer service."
+author: "Chen Jiaxing"
+branding:
+  icon: "code"
+  color: "blue"
+inputs:
+  APPID:
+    description: "Your X-Developer APPID"
+    required: true
+  APPKEY:
+    description: "Your X-Developer APPKEY"
+    required: true
+  TEAMID:
+    description: "Your X-Developer TEAMID"
+    required: true
+  Master:
+    description: "Mark of master repository"
+    default: False
+    required: false
+outputs:
+  response:
+    description: "The massage of X-Developer service response"
+runs:
+  using: "ubuntu-latest"
