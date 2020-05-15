@@ -7,7 +7,7 @@ This GitHub Action connects GitHub and [X-Developer](https://x-developer.cn) ser
 
 ## Usage
 
-This Action authenticate with X-Developer server by GitHub secrets `APPID` and `APPKEY`, it send `git log` csv file to X-Developer team analysis service by `TEAMID` whenever users pushed to or merged pull requests to GitHub repository.
+This Action retrieves the Git log from CI workspace directly during the process in a workflow job. The user must specify X-Developer account ID-key and team id in GitHub secrets.
 
 ### 1. Create X-Developer account
 
@@ -116,6 +116,10 @@ jobs:
 ## Demo
 
 Feel free to access these [Demo Projects](https://x-developer.cn/projects/).
+
+## Support
+
+Any question or request, please contact us via [support@withfield.tech](mailto:support@withfield.tech)
 
 ## License
 
