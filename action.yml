@@ -8,15 +8,12 @@ inputs:
   APPID:
     description: "Your X-Developer APPID"
     required: true
-    default: ${{ secrets.APPID }}
   APPKEY:
     description: "Your X-Developer APPKEY"
     required: true
-    default: ${{ secrets.APPKEY }}
   TEAMID:
     description: "Your X-Developer TEAMID"
     required: true
-    default: ${{ secrets.TEAMID }}
   Master:
     description: "Mark of master repository"
     default: False
