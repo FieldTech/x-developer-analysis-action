@@ -6,13 +6,13 @@ branding:
   color: "blue"
 inputs:
   APPID:
-    description: "Your X-Developer APPID"
+    description: "APPID of X-Developer account"
     required: true
   APPKEY:
-    description: "Your X-Developer APPKEY"
+    description: "APPKEY of X-Developer account"
     required: true
   TEAMID:
-    description: "Your X-Developer TEAMID"
+    description: "TEAMID of the team created"
     required: true
   Master:
     description: "Mark of master repository"
@@ -22,9 +22,6 @@ inputs:
     description: "Force analysis"
     default: False
     required: false
-outputs:
-  response:
-    description: "The massage of X-Developer service response"
 runs:
   using: "docker"
   image: "Dockerfile"
