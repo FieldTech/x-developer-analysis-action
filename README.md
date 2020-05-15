@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: X-Developer Analysis Action
-        uses: FieldTech/x-developer-analysis-action@V1.1
+        uses: FieldTech/x-developer-analysis-action@V1.2
         with:
           APPID: ${{ secrets.APPID }}
           APPKEY: ${{ secrets.APPKEY }}
@@ -65,7 +65,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: X-Developer Analysis Action
-        uses: FieldTech/x-developer-analysis-action@V1.1
+        uses: FieldTech/x-developer-analysis-action@V1.2
         with:
           APPID: ${{ secrets.APPID }}
           APPKEY: ${{ secrets.APPKEY }}
@@ -77,7 +77,7 @@ jobs:
 
 Workflow introduction
 
-It has three steps as below: setup `Python` environment, install `xdclient` and run `xdclient` command line. 
+It has three steps as below: setup `Python` environment, install `xdclient` and run `xdclient` command line.
 
 ```
 name: X-Developer Analysis Action
