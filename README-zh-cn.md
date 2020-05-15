@@ -82,7 +82,7 @@ jobs:
 ```
 ---
 
-## Workflow 参考
+## Workflow 说明
 
 X-Developer Action 完整的 Workflow 如下所示，分为构建 `Python` 环境、安装 `xdclient` 客户端与调用 `xdclient` 命令行执行分析三个步骤。
 
