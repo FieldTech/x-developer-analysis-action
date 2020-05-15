@@ -40,7 +40,7 @@ X-Developer Analysis Action 在代码提交后，自动触发 X-Developer 团队
 
 在开发分支上建立分析任务，用于帮助您近实时地管理团队日常开发活动，请配置 `workflow` 文件如下所示：
 
-```
+```yaml
 on:
   push:
     branches: [ dev, test ]         # 非主干分支
@@ -62,7 +62,7 @@ jobs:
 
 如果您需要统计发布的需求、任务或Issues，以及如合并、发布等活动，请对配置 `workflow` 文件如下所示：
 
-```
+```yaml
 on:
   push:
     branches: [ master ]            # 主干分支
@@ -86,7 +86,7 @@ jobs:
 
 X-Developer Action 完整的 Workflow 如下所示，分为构建 `Python` 环境、安装 `xdclient` 客户端与调用 `xdclient` 命令行执行分析三个步骤。
 
-```
+```yaml
 name: X-Developer Analysis Action
 
 on:

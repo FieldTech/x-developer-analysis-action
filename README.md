@@ -36,7 +36,7 @@ Enter your repository setting -> secrets, create `APPID` `APPKEY` `TEAMID` and s
 
 To analysis daily activities on non-master branches, please create a `workflow` yaml file as below:
 
-```
+```yaml
 on:
   push:
     branches: [ dev, test ]     # Non-master branches
@@ -58,7 +58,7 @@ jobs:
 
 To analysis publish or pull request activities on `master` branch, please create a `workflow` yaml file as below (specify Master parameter to True):
 
-```
+```yaml
 on:
   push:
     branches: [ master ]        # master branch
@@ -83,7 +83,7 @@ jobs:
 
 It has three steps as below: setup `Python` environment, install `xdclient` and run `xdclient` command line.
 
-```
+```yaml
 name: X-Developer Analysis Action
 
 on:
