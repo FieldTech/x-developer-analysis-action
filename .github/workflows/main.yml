@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  analysis:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    name: X-Developer analysis action
+    steps:
+    - uses: actions/checkout@v1
+
+    # Setup Python Environment
+    - name: Setup Python 2.7
+      uses: ./
+      with:
+        APPID: ${{ secrets.APPID }}
+        APPKEY: ${{ secrets.APPKEY }}
+        TEAMID: ${{ secrets.TEAMID }}
