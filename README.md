@@ -13,7 +13,7 @@ This Action authenticate with X-Developer server by GitHub secrets `APPID` and `
 
 Enter [X-Developer Site](https://x-developer.cn) and register an account for free.
 
-Get your `APPID` `APPKEY` from [config your client page](https://x-developer.cn/projects/client).
+Get your `APPID` `APPKEY` from [API](https://x-developer.cn/accounts/api) page.
 
 ### Create Your Team
 
@@ -22,11 +22,13 @@ Get your `APPID` `APPKEY` from [config your client page](https://x-developer.cn/
 
 > This GitHub Action is free for all the users.
 
-Once you created a project, check your `TEAMID` from [data source page](https://x-developer.cn/projects/sources).
+Once you created a project, check your `TEAMID` from [API](https://x-developer.cn/accounts/api) page.
 
 ### Create GitHub Secrets
 
 Enter your repository setting -> secrets, create `APPID` `APPKEY` `TEAMID` and specify the values.
+
+> You could create `APPID` and `APPKEY` in organization `secrets` if you're working in an organization.
 
 ### Config Action
 
@@ -36,29 +38,23 @@ name: X-Developer Analysis Action
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v1
 
-    # Setup Python Environment
     - name: Setup Python 2.7
       uses: actions/setup-python@v1
       with:
-        python-version: 2.7.17
+        python-version: 2.7.18
 
-    # Install X-Developer Client
-    - name: Install X-Developer Command Line Client
+    - name: Install X-Developer client
       run: pip install xdclient
 
-    # Runs a set of commands using the runners shell
-    - name: Run analysis
+    - name: Run X-Developer analysis
       env:
         APPID: ${{ secrets.APPID }}
         APPKEY: ${{ secrets.APPKEY }}

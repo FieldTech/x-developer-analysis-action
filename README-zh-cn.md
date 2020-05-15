@@ -17,7 +17,7 @@ X-Developer Analysis Action 在代码提交后，自动触发 X-Developer 团队
 
 访问 [X-Developer Site](https://x-developer.cn) 网站免费注册。
 
-注册完成后，从 [配置客户端页面](https://x-developer.cn/projects/client) 查看您的 `APPID` `APPKEY` 。
+注册完成后，可在 [API](https://x-developer.cn/accounts/api) 页面查看您的 `APPID` `APPKEY` 。
 
 ### 创建您的团队
 
@@ -26,11 +26,13 @@ X-Developer Analysis Action 在代码提交后，自动触发 X-Developer 团队
 
 > 此 GitHub Action 面向任何用户均免费。
 
-创建团队完成后，即可在 [数据源配置页面](https://x-developer.cn/projects/sources) 查看对应的 `TEAMID` 。
+创建团队完成后，即可在 [API](https://x-developer.cn/accounts/api) 页面查看对应的 `TEAMID` 。
 
 ### 创建 GitHub Secrets
 
 进入仓库 setting -> secrets, 创建 `APPID` `APPKEY` `TEAMID` 并配置对应的值。
+
+> 如果您使用 GitHub 组织，可以将 `APPID` `APPKEY` 配置在您的组织 `secrets` ，即可被所有仓库使用，以简化操作步骤。
 
 ### 配置 Action
 
@@ -40,29 +42,23 @@ name: X-Developer Analysis Action
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v1
 
-    # Setup Python Environment
     - name: Setup Python 2.7
       uses: actions/setup-python@v1
       with:
-        python-version: 2.7.17
+        python-version: 2.7.18
 
-    # Install X-Developer Client
-    - name: Install X-Developer Command Line Client
+    - name: Install X-Developer client
       run: pip install xdclient
 
-    # Runs a set of commands using the runners shell
-    - name: Run analysis
+    - name: Run X-Developer analysis
       env:
         APPID: ${{ secrets.APPID }}
         APPKEY: ${{ secrets.APPKEY }}
