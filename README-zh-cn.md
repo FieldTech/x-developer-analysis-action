@@ -34,7 +34,53 @@ X-Developer Analysis Action 在代码提交后，自动触发 X-Developer 团队
 
 > 如果您使用 GitHub 组织，可以将 `APPID` `APPKEY` 配置在您的组织 `secrets` ，即可被所有仓库使用，以简化操作步骤。
 
-### 配置 Action
+### 使用 Action
+
+如果您用于分析开发分支的日常提交活动，请配置 `workflow` 文件如下所示：
+
+```
+on:
+  push:
+    branches: [ dev, test ]         # 非主干分支
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: X-Developer Analysis Action
+        uses: FieldTech/x-developer-analysis-action@V1.1
+        with:
+          APPID: ${{ secrets.APPID }}
+          APPKEY: ${{ secrets.APPKEY }}
+          TEAMID: ${{ secrets.TEAMID }}
+```
+
+如果您用于分析仓库的主干活动，如合并、发布等，请配置 `workflow` 文件如下所示：
+
+```
+on:
+  push:
+    branches: [ master ]            # 主干分支
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: X-Developer Analysis Action
+        uses: FieldTech/x-developer-analysis-action@V1.1
+        with:
+          APPID: ${{ secrets.APPID }}
+          APPKEY: ${{ secrets.APPKEY }}
+          TEAMID: ${{ secrets.TEAMID }}
+          Master: True              # 将 Master 参数标记为 True
+```
+---
+
+## Workflow 参考
+
+X-Developer Action 完整的 Workflow 如下所示，分为构建 `Python` 环境、安装 `xdclient` 客户端与调用 `xdclient` 命令行执行分析三个步骤。
 
 ```
 name: X-Developer Analysis Action

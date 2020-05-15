@@ -32,6 +32,53 @@ Enter your repository setting -> secrets, create `APPID` `APPKEY` `TEAMID` and s
 
 ### Config Action
 
+To analysis activity on non-master branches, please create a `workflow` yaml file as below:
+
+```
+on:
+  push:
+    branches: [ dev, test ]     # Non-master branches
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: X-Developer Analysis Action
+        uses: FieldTech/x-developer-analysis-action@V1.1
+        with:
+          APPID: ${{ secrets.APPID }}
+          APPKEY: ${{ secrets.APPKEY }}
+          TEAMID: ${{ secrets.TEAMID }}
+```
+
+To analysis activity on `master` branch, please create a `workflow` yaml file as below (specify Master parameter to True):
+
+```
+on:
+  push:
+    branches: [ master ]        # master branch
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: X-Developer Analysis Action
+        uses: FieldTech/x-developer-analysis-action@V1.1
+        with:
+          APPID: ${{ secrets.APPID }}
+          APPKEY: ${{ secrets.APPKEY }}
+          TEAMID: ${{ secrets.TEAMID }}
+          Master: True          # specify master parameter to True
+```
+
+---
+
+Workflow introduction
+
+It has three steps as below: setup `Python` environment, install `xdclient` and run `xdclient` command line. 
+
 ```
 name: X-Developer Analysis Action
 
