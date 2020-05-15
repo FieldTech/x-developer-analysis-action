@@ -36,7 +36,9 @@ X-Developer Analysis Action 在代码提交后，自动触发 X-Developer 团队
 
 ### 使用 Action
 
-如果您用于分析开发分支的日常提交活动，请配置 `workflow` 文件如下所示：
+#### 开发分支
+
+在开发分支上建立分析任务，用于帮助您近实时地管理团队日常开发活动，请配置 `workflow` 文件如下所示：
 
 ```
 on:
@@ -56,7 +58,9 @@ jobs:
           TEAMID: ${{ secrets.TEAMID }}
 ```
 
-如果您用于分析仓库的主干活动，如合并、发布等，请配置 `workflow` 文件如下所示：
+#### 主干
+
+如果您需要统计发布的需求、任务或Issues，以及如合并、发布等活动，请对配置 `workflow` 文件如下所示：
 
 ```
 on:

@@ -32,7 +32,9 @@ Enter your repository setting -> secrets, create `APPID` `APPKEY` `TEAMID` and s
 
 ### Config Action
 
-To analysis activity on non-master branches, please create a `workflow` yaml file as below:
+#### On develop/test branches
+
+To analysis daily activities on non-master branches, please create a `workflow` yaml file as below:
 
 ```
 on:
@@ -52,7 +54,9 @@ jobs:
           TEAMID: ${{ secrets.TEAMID }}
 ```
 
-To analysis activity on `master` branch, please create a `workflow` yaml file as below (specify Master parameter to True):
+#### On Master
+
+To analysis publish or pull request activities on `master` branch, please create a `workflow` yaml file as below (specify Master parameter to True):
 
 ```
 on:
@@ -75,7 +79,7 @@ jobs:
 
 ---
 
-Workflow introduction
+## Workflow introduction
 
 It has three steps as below: setup `Python` environment, install `xdclient` and run `xdclient` command line.
 
