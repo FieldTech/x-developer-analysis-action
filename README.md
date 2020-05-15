@@ -9,13 +9,13 @@ This GitHub Action connects GitHub and [X-Developer](https://x-developer.cn) ser
 
 This Action authenticate with X-Developer server by GitHub secrets `APPID` and `APPKEY`, it send `git log` csv file to X-Developer team analysis service by `TEAMID` whenever users pushed to or merged pull requests to GitHub repository.
 
-### Create Your X-Developer Account
+### 1. Create X-Developer account
 
 Enter [X-Developer Site](https://x-developer.cn) and register an account for free.
 
 Get your `APPID` `APPKEY` from [API](https://x-developer.cn/accounts/api) page.
 
-### Create Your Team
+### 2. Create team
 
 - For free users, you could only create public analysis project, **it means everyone could access your team reports,** we recommend this to **opensource project teams.**
 - Private project is only for paid users.
@@ -24,13 +24,13 @@ Get your `APPID` `APPKEY` from [API](https://x-developer.cn/accounts/api) page.
 
 Once you created a project, check your `TEAMID` from [API](https://x-developer.cn/accounts/api) page.
 
-### Create GitHub Secrets
+### 3. Create GitHub secrets
 
 Enter your repository setting -> secrets, create `APPID` `APPKEY` `TEAMID` and specify the values.
 
 > You could create `APPID` and `APPKEY` in organization `secrets` if you're working in an organization.
 
-### Config Action
+### 4. Config action
 
 #### On develop/test branches
 
