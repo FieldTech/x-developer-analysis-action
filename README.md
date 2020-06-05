@@ -17,12 +17,12 @@ Get your `APPID` `APPKEY` from [API](https://x-developer.cn/accounts/api) page.
 
 ### 2. Create team
 
-- For free users, you could only create public analysis project, **it means everyone could access your team reports,** we recommend this to **opensource project teams.**
-- Private project is only for paid users.
+- For free users, you could only create public team, **which will be listed in [X-Developer Explore](https://x-developer.cn) but only developers have permission to access internal reports,** we recommend this to **open source projects.**
+- Private team is only for paid users.
 
 > This GitHub Action is free for all the users.
 
-Once you created a project, check your `TEAMID` from [API](https://x-developer.cn/accounts/api) page.
+Once you created a team, check your `TEAMID` from [API](https://x-developer.cn/accounts/api) page.
 
 ### 3. Create GitHub secrets
 
