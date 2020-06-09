@@ -113,9 +113,9 @@ jobs:
       run: python -m xdclient -i $APPID -k $APPKEY -t $TEAMID -m True
 ```
 
-## Demo
+## Showcases
 
-Feel free to access these [Demo Projects](https://x-developer.cn/projects/).
+Feel free to access these [public projects](https://x-developer.cn/projects/).
 
 ## Support
 
