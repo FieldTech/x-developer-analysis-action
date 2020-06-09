@@ -1,7 +1,7 @@
 # X-Developer Analysis Action
 
-- [English](https://github.com/FieldTech/x-developer-analysis-action/blob/master/README.md)
-- [中文](https://github.com/FieldTech/x-developer-analysis-action/blob/master/README-zh-cn.md)
+[![EN doc](https://img.shields.io/badge/document-English-blue.svg)](https://github.com/FieldTech/x-developer-analysis-action/blob/master/README.md)
+[![CN doc](https://img.shields.io/badge/文档-中文版-blue.svg)](https://github.com/FieldTech/x-developer-analysis-action/blob/master/README-zh-cn.md)
 
 > X-Developer Analysis Action 在代码提交后，自动触发 X-Developer 团队效能分析并通知分析结果。
 
