@@ -114,9 +114,9 @@ jobs:
       run: python -m xdclient -i $APPID -k $APPKEY -t $TEAMID -m True
 ```
 
-## 示例项目
+## 演示
 
-通过此链接即可查看分析效果：[示例项目](https://x-developer.cn/projects/)
+访问 [公开团队](https://x-developer.cn/projects/) 查看已有的分析项目，如果您是这些团队中的一员，可以直接点击"我是开发者"申请访问内部的分析报告。
 
 ## 支持
 
